@@ -1,0 +1,274 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --text: #20243a;
+  --muted: #626b80;
+  --primary: #5b5ce2;
+  --border: #e0e4f0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  --bg: #151827;
+  --card: #22273b;
+  --text: #f5f6ff;
+  --muted: #c2c7d8;
+  --primary: #9293ff;
+  --border: #3a4058;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 6%;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo span,
+.hero h1 span {
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 6% 75px;
+  background: linear-gradient(135deg, #e7e8ff, #f5eaff);
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #25294b, #30233e);
+}
+
+.tag {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero > p:not(.tag) {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+#helloMessage {
+  color: var(--primary);
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.section {
+  width: min(1100px, 90%);
+  margin: auto;
+  padding: 65px 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 25px rgba(40, 45, 90, 0.07);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.card p,
+.demo p {
+  color: var(--muted);
+}
+
+.demo {
+  text-align: center;
+  background: var(--card);
+  border-radius: 16px;
+  margin-bottom: 30px;
+  padding: 40px 20px;
+}
+
+.demo p {
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+}
+
+form label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+}
+
+#formResult {
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 750px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    order: 3;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 65px 5%;
+  }
+
+  .section h2 {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 13px;
+  }
+
+  form {
+    padding: 18px;
+  }
+}
